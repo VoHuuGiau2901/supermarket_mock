@@ -1,0 +1,43 @@
+<div class="row">
+    <div class="col">
+      <img
+        [src]="cartitem.product.img"
+        style="max-width: 120px"
+        alt="productImage"
+        class="img-thumbnail"
+      />
+    </div>
+    <div class="col">
+      <h3>{{cartitem.product.name}}</h3>
+      <h4>{{cartitem.product.price | currency:"VND"}}</h4>
+    </div>
+    <div class="col">
+      <div class="buttons_added" style="margin-top: 20px">
+        <input
+          (click)="decrement1()"
+          class="minus is-form"
+          style="width: 30px; background-color: rgba(255, 0, 72, 0.801)"
+          type="button"
+          value="-"
+        />
+        <input
+          id="demoInput1"
+          aria-label="quantity"
+          style="width: 80px"
+          class="input-qty"
+          max="100"
+          min="0"
+          type="number"
+          [(ngModel)]="cartitem.quantity"
+        />
+        <input
+         (click)="increment1()"
+          class="plus is-form"
+          style="width: 30px; background-color: rgba(255, 0, 72, 0.801)"
+          type="button"
+          value="+"
+        />
+      </div>
+    </div>
+    <div class="col"><h3 style="margin-top: 20px">{{cartitem.product.price*cartitem.quantity | currency:"VND"}}</h3></div>
+  </div>
